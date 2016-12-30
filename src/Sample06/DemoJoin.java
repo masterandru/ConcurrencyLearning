@@ -25,5 +25,4 @@ public class DemoJoin {
 
         System.out.println("Глaвный поток завершен.");
     }
-
 }
