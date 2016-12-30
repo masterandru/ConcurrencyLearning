@@ -1,8 +1,19 @@
 package Sample07;
 
-/**
- * user
- * 30.12.2016
- */
-public class Caller {
+public class Caller implements Runnable {
+    String msg;
+    Callme target;
+    Thread thread;
+
+    public Caller(Callme target, String msg) {
+        this.msg = msg;
+        this.target = target;
+        thread = new Thread(this);
+        thread.start();
+    }
+
+    @Override
+    public void run() {
+        target.call(msg);
+    }
 }

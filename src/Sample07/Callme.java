@@ -1,8 +1,13 @@
 package Sample07;
 
-/**
- * user
- * 30.12.2016
- */
 public class Callme {
+    synchronized void call(String msg) {
+        System.out.printf("[" + msg);
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            System.out.printf("Прервано");
+        }
+        System.out.printf("]");
+    }
 }
